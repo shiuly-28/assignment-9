@@ -13,18 +13,14 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
-                        <div className=''>
-                            <div className=''>
-                                <h1 className='text-4xl font-semibold text-white text-center'>It avoids subjective claims or <br /> exaggeration that might raise <br /> red flags legally</h1>
-                                <p className=' text-black text-center'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's <br /> a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>
-
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
-                <div className="flex items-center gap-2">
-                    <img className='w-[60px] h-[60px]' src={logoImage} alt="logo" />
-                    <h2 className='text-xl font-bold'>LawConnect</h2>
+                <div className='flex items-center'>
+                    <span><img className='w-[100px] h-[60px]' src={logoImage} alt="logo" /></span><span>
+                        <h2 className='text-xl font-bold'>LawConnect</h2>
+                    </span>
+                    
                 </div>
             </div>
 
@@ -46,6 +42,11 @@ const Navbar = () => {
                 <div className="flex items-center gap-3">
                     {/* User Image with Hover Name */}
 
+                    <NavLink to="/login">
+                        <button className="btn btn-outline btn-secondary text-black">
+                            Log out
+                        </button>
+                    </NavLink>
                     <NavLink to="/login">
                         <button className="btn btn-outline btn-secondary text-black">
                             Login
