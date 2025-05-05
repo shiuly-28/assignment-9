@@ -1,13 +1,17 @@
-import React from 'react';
-import CategoryNews from '../../componenet/CategoryNews';
+
+import { useLoaderData } from 'react-router';
 import Banner from '../../componenet/Banner';
+import HomeCards from './HomeCards/HomeCards';
+
 
 const Home = () => {
+    const data = useLoaderData();
+    console.log(data)
     return (
         <div>
-            {/* <CategoryNews></CategoryNews> */}
+          
             <Banner></Banner>
-            <h1>home pages</h1>
+            <HomeCards data={data}></HomeCards>
         </div>
     );
 };

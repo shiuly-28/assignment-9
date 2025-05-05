@@ -9,7 +9,9 @@ const router = createBrowserRouter([
         element: <HomeLayOut></HomeLayOut>,
         children: [
             {
+                index:true,
                 path: "",
+                loader:()=>fetch("/event.json"),
                 element: <Home></Home>,
             },
             {
