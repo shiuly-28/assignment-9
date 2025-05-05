@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Legal Workshop on Cyber Law",
+    "thumbnail": "https://i.ibb.co.com/xKC2yJMS/workshop-event-ideas-red-chairs-min.png",
+    "category": "Workshop",
+    "date": "2025-06-10",
+    "location": "Dhaka, Bangladesh",
+    "entry_fee": 500,
+    "description": "An in-depth workshop on modern cyber laws and digital rights in Bangladesh."
+  },
+  {
+    "id": 2,
+    "name": "High Court Visit Program",
+    "thumbnail": "https://i.ibb.co.com/gL4VGC2p/Dps-Jaipur.jpg",
+    "category": "Educational Tour",
+    "date": "2025-06-15",
+    "location": "Supreme Court, Dhaka",
+    "entry_fee": 300,
+    "description": "A guided tour of the High Court with insights into judicial procedures."
+  },
+  {
+    "id": 3,
+    "name": "Corporate Law Seminar",
+    "thumbnail": "https://i.ibb.co.com/QjCTm2wK/Seminars-1.jpg",
+    "category": "Seminar",
+    "date": "2025-07-01",
+    "location": "Chattogram Bar Association",
+    "entry_fee": 700,
+    "description": "Leading corporate lawyers share knowledge on corporate compliance and legal strategy."
+  },
+  {
+    "id": 4,
+    "name": "Human Rights Awareness Camp",
+    "thumbnail": "https://i.ibb.co.com/nNvnLCZ6/Event-Banner.jpg",
+    "category": "Campaign",
+    "date": "2025-07-12",
+    "location": "Rajshahi University",
+    "entry_fee": 0,
+    "description": "Free camp promoting awareness on basic human rights and legal protections."
+  },
+  {
+    "id": 5,
+    "name": "Criminal Law Bootcamp",
+    "thumbnail": "https://i.ibb.co.com/FqwJsNLq/images.jpg",
+    "category": "Training",
+    "date": "2025-08-05",
+    "location": "Sylhet District Court",
+    "entry_fee": 1000,
+    "description": "Intensive bootcamp focusing on criminal law procedures, case studies, and trials."
+  },
+  {
+    "id": 6,
+    "name": "Legal Aid Fair 2025",
+    "thumbnail": "https://i.ibb.co.com/WNqrWSP4/first-industrial.jpg",
+    "category": "Fair",
+    "date": "2025-09-20",
+    "location": "Khulna Town Hall",
+    "entry_fee": 100,
+    "description": "Meet legal aid providers, ask legal questions, and attend free mini-sessions."
+  }
+]
