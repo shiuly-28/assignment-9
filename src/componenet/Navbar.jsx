@@ -1,5 +1,5 @@
 
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logoImage from "../../src/assets/logo .png";
 
 const Navbar = () => {
@@ -47,13 +47,11 @@ const Navbar = () => {
                             Log out
                         </button>
                     </NavLink>
-                    <NavLink to="/login">
-                        <button className="btn btn-outline btn-secondary text-black">
+                    
+                    <Link to="/auth/login" className="btn btn-outline btn-secondary text-black">
                             Login
-                        </button>
-                    </NavLink>
-
-                </div>
+                        </Link>
+                    </div>
             </div>
         </div>
     );

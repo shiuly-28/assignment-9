@@ -28,7 +28,7 @@ const Banner = () => {
                         }}
                     >
                         <div className="flex flex-col justify-center items-center h-full">
-                            <h3 className="text-black text-3xl">"Start Learning This Week – Join the Free Workshop!"</h3>
+                            <h3 className="text-black text-3xl font-bold">"Start Learning This Week – Join the Free Workshop!"</h3>
                             <p className='text-black'>When the city lights dim and the stars begin to shine, something magical is about to <br />
                                 This isn't just another evening—this is the event everyone's been waiting for.</p>
                         </div>
@@ -49,7 +49,7 @@ const Banner = () => {
                         }}
                     >
                         <div className="flex flex-col text-center justify-center items-center h-full">
-                            <h3 className="text-black text-3xl">"Learn from the Experts – Registration Now Open"</h3>
+                            <h3 className="text-black font-bold text-3xl">"Learn from the Experts – Registration Now Open"</h3>
                             <p className='text-black'>When the city lights dim and the stars begin to shine, something magical is about to <br />
                                 This isn't just another evening—this is the event everyone's been waiting for.</p>
                         </div>
@@ -70,7 +70,7 @@ const Banner = () => {
                         }}
                     >
                         <div className="flex flex-col  text-justify-center items-center">
-                            <h3 className="text-white text-3xl">"The Ultimate Networking Opportunity – Don’t Miss Out!"</h3>
+                            <h3 className="text-white text-3xl font-bold">"The Ultimate Networking Opportunity – Don’t Miss Out!"</h3>
                             <p className='text-white'>When the city lights dim and the stars begin to shine, something magical is about to happen. <br/>
                                 This isn't just another evening—this is the event everyone's been waiting for.</p>
                         </div>
