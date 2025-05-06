@@ -7,11 +7,14 @@ import router from './routes/routes.jsx'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AuthProvider from './provider/AuthProvider.jsx'
+import { ToastContainer } from 'react-toastify'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <ToastContainer />
     <AuthProvider>
+
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
   </StrictMode>,

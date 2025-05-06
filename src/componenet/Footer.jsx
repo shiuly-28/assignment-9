@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
                 {/* Company Info */}
                 <div>
-                    <h2 className="text-2xl font-bold mb-2">LawConnect</h2>
+                    <h2 className="text-2xl font-bold mb-2">Event Planing</h2>
                     <p className="text-sm">
                         Empowering you with legal solutions. Book trusted lawyers anytime.
                     </p>
@@ -44,7 +44,7 @@ const Footer = () => {
 
             {/* Bottom Text */}
             <div className="text-center text-sm mt-8 border-t border-gray-700 pt-4">
-                &copy; {new Date().getFullYear()} LawConnect. All rights reserved.
+                &copy; {new Date().getFullYear()} Event Planning. All rights reserved.
             </div>
         </footer>
     );

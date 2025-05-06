@@ -5,6 +5,7 @@ import Home from "../layouts/pages/Home";
 import Login from "../layouts/pages/Login";
 import Register from "../layouts/pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import PrivetRouter from "../provider/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,9 @@ const router = createBrowserRouter([
     },
       {
         path: "/category/:id",
-          element: <CategoryNews></CategoryNews>,
+          element: <PrivetRouter>
+              <CategoryNews></CategoryNews>
+          </PrivetRouter>,
         loader: () => fetch("/event.json"),
     }
 ]);

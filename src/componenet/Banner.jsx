@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
+import Navbar from './Navbar';
 const Banner = () => {
     const settings = {
         dots: true,
@@ -14,7 +15,25 @@ const Banner = () => {
     };
     return (
         <div className='relative w-11/12 mx-auto py-6' >
+           
             <Slider {...settings}>
+                
+                <div>
+                    <div
+                        style={{
+                            backgroundImage:
+                                "url('https://i.ibb.co.com/ymQgnbcX/How-to-Start-Event-Management-Business-in-Bangladesh.jpg')",
+                            width: "100%",
+                            hight: "50%",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat",
+                            height: "60vh", // optional, to make it fill screen
+                        }}
+                    >
+
+                    </div>
+                </div>
                 <div>
                     <div
                         style={{
@@ -56,27 +75,7 @@ const Banner = () => {
                       
                     </div>
                 </div>
-                <div>
-                    <div
-                        style={{
-                            backgroundImage:
-                                "url('https://i.ibb.co.com/FLvPMt60/images.jpg')",
-                            width: "100%",
-                            hight: "50%",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                            height: "60vh", // optional, to make it fill screen
-                        }}
-                    >
-                        <div className="flex flex-col  text-justify-center items-center">
-                            <h3 className="text-white text-3xl font-bold">"The Ultimate Networking Opportunity – Don’t Miss Out!"</h3>
-                            <p className='text-white'>When the city lights dim and the stars begin to shine, something magical is about to happen. <br/>
-                                This isn't just another evening—this is the event everyone's been waiting for.</p>
-                        </div>
-                        
-                    </div>
-                </div>
+              
 
             </Slider>
       </div>

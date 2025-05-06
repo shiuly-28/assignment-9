@@ -6,7 +6,7 @@ const CategoryNews = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const [category, setCategory] = useState({});
-    console.log(id, data, category)
+    // console.log(id, data, category)
 
     useEffect(() => {
         const category = data.find((eventCard) => eventCard.id == id)
@@ -14,8 +14,8 @@ const CategoryNews = () => {
     }, [data, id]);
 
     return (
-        <div>
-            <h1>Caregory pages</h1>
+        <div className=''>
+          
             <CategoryNewsCard category={category}></CategoryNewsCard>
         </div>
     );
