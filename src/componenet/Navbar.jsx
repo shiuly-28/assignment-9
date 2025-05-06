@@ -1,8 +1,11 @@
 
 import { Link, NavLink } from 'react-router-dom';
 import logoImage from "../../src/assets/logo .png";
+import { use } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+    const { user } = use(AuthContext);
     return (
         <div className="navbar w-11/12 mx-auto bg-gray-100 shadow-sm rounded-2xl mt-5">
             <div className="navbar-start">
@@ -17,6 +20,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='flex items-center'>
+                    <div>{user && user.email}</div>
                     <span><img className='w-[100px] h-[60px]' src={logoImage} alt="logo" /></span><span>
                         <h2 className='text-xl font-bold'>LawConnect</h2>
                     </span>

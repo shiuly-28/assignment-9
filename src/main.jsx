@@ -6,12 +6,13 @@ import { RouterProvider } from 'react-router'
 import router from './routes/routes.jsx'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AuthProvider from './provider/AuthProvider.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}>
-
-    </RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )

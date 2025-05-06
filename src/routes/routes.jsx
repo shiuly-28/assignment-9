@@ -17,10 +17,7 @@ const router = createBrowserRouter([
                 loader:()=>fetch("/event.json"),
                 element: <Home></Home>,
             },
-            {
-                path: "/category/:id",
-                element:<CategoryNews></CategoryNews>
-            }
+          
         ]
     },
     {
@@ -44,6 +41,11 @@ const router = createBrowserRouter([
     {
         path: "/*",
         element: <h2>Error page</h2>,
+    },
+      {
+        path: "/category/:id",
+          element: <CategoryNews></CategoryNews>,
+        loader: () => fetch("/event.json"),
     }
 ]);
 export default router;
