@@ -30,8 +30,7 @@ const Banner = () => {
                             height: "60vh", // optional, to make it fill screen
                         }}
                     >
-
-                    </div>
+                </div>
                 </div>
                 <div>
                     <div

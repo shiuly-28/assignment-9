@@ -42,6 +42,10 @@ const Navbar = () => {
                             isActive ? "text-blue-600 font-semibold" : ""}>Home</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/ExtraNewsCard" className={({ isActive }) =>
+                            isActive ? "text-blue-600 font-semibold" : ""}>ExtraCard</NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/myProfile" className={({ isActive }) =>
                             isActive ? "text-blue-600 font-semibold" : ""}>My Profile</NavLink>
                     </li>

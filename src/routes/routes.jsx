@@ -5,9 +5,11 @@ import Home from "../layouts/pages/Home";
 import Login from "../layouts/pages/Login";
 import Register from "../layouts/pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
-import PrivetRouter from "../provider/PrivetRoute";
 import Error from "../layouts/pages/Error";
 import MyProfile from "../layouts/pages/MyProfile";
+import PrivetRoute from "../provider/PrivetRoute";
+import ForgetPassword from "../layouts/pages/ForgetPassword";
+import ExtraNewCard from "../layouts/pages/ExtraNewCard";
 
 const router = createBrowserRouter([
     {
@@ -47,10 +49,18 @@ const router = createBrowserRouter([
     },
       {
         path: "/category/:id",
-          element: <PrivetRouter>
+          element: <PrivetRoute>
               <CategoryNews></CategoryNews>
-          </PrivetRouter>,
+          </PrivetRoute>,
         loader: () => fetch("/event.json"),
+    },
+    {
+        path: "/forgatePassword",
+        element:<ForgetPassword></ForgetPassword>
+    },
+    {
+        path: "/ExtraNewsCard",
+        element: <ExtraNewCard></ExtraNewCard>
     }
 ]);
 export default router;

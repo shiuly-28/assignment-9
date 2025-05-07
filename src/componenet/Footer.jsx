@@ -2,13 +2,13 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-200 py-10 px-6">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <footer className="w-11/12 mx-auto text-black py-10 px-6 mt-10">
+            <div className="max-w-7xl mx-auto text-center grid md:grid-cols-3 gap-8">
                 {/* Company Info */}
                 <div>
                     <h2 className="text-2xl font-bold mb-2">Event Planing</h2>
                     <p className="text-sm">
-                        Empowering you with legal solutions. Book trusted lawyers anytime.
+                        Empowering you with legal solutions.<br/> Book trusted lawyers anytime.
                     </p>
                 </div>
 
