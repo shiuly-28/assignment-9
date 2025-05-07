@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Loading from './Loading';
 import Navbar from '../../componenet/Navbar';
 import Footer from '../../componenet/Footer';
+import { Helmet } from 'react-helmet-async';
     
 const MyProfile = () => {
     const { user, updateUser } = useContext(AuthContext);
@@ -25,6 +26,9 @@ const MyProfile = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <Helmet>
+                <title>Company || MyProfile</title>
+            </Helmet>
             <div className="max-w-5xl px-20 py-10 mt-8 bg-base-200 p-10 mx-auto">
                
 

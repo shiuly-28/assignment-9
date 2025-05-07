@@ -8,14 +8,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AuthProvider from './provider/AuthProvider.jsx'
 import { ToastContainer } from 'react-toastify'
+import { HelmetProvider } from 'react-helmet-async'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ToastContainer />
-    <AuthProvider>
-
+    <HelmetProvider>
+      <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </HelmetProvider>
   </StrictMode>,
 )
