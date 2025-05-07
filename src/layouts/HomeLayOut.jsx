@@ -12,7 +12,6 @@ const HomeLayOut = () => {
                  <Navbar></Navbar>
                 
                 <Outlet></Outlet>
-                <ExtraNewCard></ExtraNewCard>
                 <Footer></Footer>
             </main>
         </div>

@@ -2,7 +2,7 @@ import partyImage from "../../assets/party.png";
 import eventImage from "../../assets/event.png";
 import functionImage from "../../assets/function.png";
 import moveImage from "../../assets/function.png";
-import { FaBirthdayCake, FaCalendarAlt, FaGlassCheers, FaFilm, FaRegStar } from "react-icons/fa";
+import { FaBirthdayCake, FaCalendarAlt, FaGlassCheers, FaFilm, FaRegStar, FaStar } from "react-icons/fa";
 import Footer from "../../componenet/Footer";
 import Navbar from "../../componenet/Navbar";
 
@@ -17,12 +17,12 @@ const ExtraNewCard = () => {
                     {/* Card 1 */}
                     <div className='bg-white rounded-2xl shadow-md p-4 w-64 h-80 flex flex-col '>
                         <img className='w-full h-40 object-cover rounded-xl mb-4' src={partyImage} alt="Birthday" />
-
+                        
                         <span className="flex"><h3 className='text-lg font-semibold mt-2'>Birthday Party🎂🎂</h3></span>
-
+                        <p className="text-gray-400 mt-2">Date: 10-5-2025</p>
                         <div className="flex justify-between mt-5">
                             <p>4.20</p>
-                            <span className="flex"><FaRegStar /><FaRegStar /><FaRegStar /></span>
+                            <span className="flex"><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /></span>
 
                         </div>
                     </div>
@@ -32,9 +32,11 @@ const ExtraNewCard = () => {
                         <img className='w-full h-40 object-cover rounded-xl mb-4' src={eventImage} alt="Event" />
                         <FaCalendarAlt className="text-4xl text-blue-600" />
                         <h3 className='text-lg font-semibold mt-2'>Corporate Event</h3>
+                        <p className="text-gray-400 mt-2">Date: 12-4-2025</p>
                         <div className="flex justify-between mt-5">
+                            
                             <p>4.20</p>
-                            <span className="flex"><FaRegStar /><FaRegStar /><FaRegStar /></span>
+                            <span className="flex"><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /></span>
 
                         </div>
                     </div>
@@ -44,9 +46,10 @@ const ExtraNewCard = () => {
                         <img className='w-full h-40 object-cover rounded-xl mb-4' src={functionImage} alt="Function" />
                         <FaGlassCheers className="text-4xl text-green-600" />
                         <h3 className='text-lg font-semibold mt-2'>Family Function</h3>
+                        <p className="text-gray-400 mt-2">Date: 3-4-2025</p>
                         <div className="flex justify-between mt-5">
                             <p>4.20</p>
-                            <span className="flex"><FaRegStar /><FaRegStar /><FaRegStar /></span>
+                            <span className="flex"><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /></span>
 
                         </div>
                     </div>
@@ -56,9 +59,10 @@ const ExtraNewCard = () => {
                         <img className='w-full h-40 object-cover rounded-xl mb-4' src={moveImage} alt="Movie" />
                         <FaFilm className="text-4xl text-purple-600" />
                         <h3 className='text-lg font-semibold mt-2'>Movie Night</h3>
+                        <p className="text-gray-400 mt-2">Date: 2-5-2025</p>
                         <div className="flex justify-between mt-5">
                             <p>4.20</p>
-                            <span className="flex"><FaRegStar /><FaRegStar /><FaRegStar /></span>
+                            <span className="flex"><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /><FaStar className="text-amber-400" /></span>
 
                         </div>
                     </div>
