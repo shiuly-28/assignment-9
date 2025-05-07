@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
     const { createUser, setUser, googleSignIn } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -38,17 +40,29 @@ const Register = () => {
                 <h2 className='text-2xl font-bold text-center'>Register Your Account</h2>
                 <div className="card-body">
                     <form onSubmit={handleRegister}>
+                        {/* name */}
                         <label className="label">Name</label>
                         <input name='name' type="text" className="input input-bordered" placeholder="Name" required />
-
+                        {/* photo */}
                         <label className="label">Photo URL</label>
                         <input name='photo' type="text" className="input input-bordered" placeholder="Photo URL" required />
+                        {/* email */}
 
-                        <label className="label">Email</label>
-                        <input name='email' type="email" className="input input-bordered" placeholder="Email" required />
-
-                        <label className="label">Password</label>
-                        <input name='password' type="password" className="input input-bordered" placeholder="Password" required />
+                            <label className="label">Email</label>
+                            <input name='email' type="email" className="input input-bordered" placeholder="Email" required />
+                            
+                        {/* password */}
+                        <div className='relative'>
+                            <label className="label">Password</label>
+                            <input name='password' type={showPassword ? 'text' : 'password'}
+                                className="input input-bordered" placeholder="Password"/>
+                            <button onClick={() => { setShowPassword(!showPassword) }} className='btn btn-xs absolute top-7 right-6'>
+                                
+                                {
+                                    showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />
+                                }
+                            </button>
+                       </div>
 
                         <button type='submit' className="btn btn-neutral mt-4 w-full">Register</button>
                         <p className='text-center mt-5'>OR</p>
