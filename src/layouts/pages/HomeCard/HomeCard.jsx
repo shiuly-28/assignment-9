@@ -14,11 +14,11 @@ const HomeCard = ({ singleCard }) => {
     } = singleCard;
    
     return (
-        <div>
+        <div className=''>
             
-            <div className="card lg:card-side bg-base-100 w-full mx-auto shadow-xl mt-8 mb-8">
-                <figure className="w-full">
-                    <img src={thumbnail} alt={name} className="w-full h-full rounded-xl" />
+            <div className="card lg:card-side bg-base-100 w-full mx-auto shadow-xl mt-8 p-5 mb-8 ">
+                <figure>
+                    <img src={thumbnail} alt={name} className="w-full h-52 rounded-xl" />
                 </figure>
                 <div className="card-body">
                     <div className="badge badge-secondary mb-2">{category}</div>

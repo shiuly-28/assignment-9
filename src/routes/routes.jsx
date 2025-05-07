@@ -6,6 +6,8 @@ import Login from "../layouts/pages/Login";
 import Register from "../layouts/pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivetRouter from "../provider/PrivetRoute";
+import Error from "../layouts/pages/Error";
+import MyProfile from "../layouts/pages/MyProfile";
 
 const router = createBrowserRouter([
     {
@@ -36,12 +38,12 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: "/my profile",
-        element: <h2>my profile</h2>
+        path: "/myProfile",
+        element: <MyProfile></MyProfile>
     },
     {
         path: "/*",
-        element: <h2>Error page</h2>,
+        element: <Error></Error>,
     },
       {
         path: "/category/:id",

@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import Navbar from '../componenet/Navbar';
 import Footer from '../componenet/Footer';
 import Banner from '../componenet/Banner';
+import ExtraNewCard from './pages/ExtraNewCard';
 
 const HomeLayOut = () => {
     return (
@@ -11,6 +12,7 @@ const HomeLayOut = () => {
                  <Navbar></Navbar>
                 
                 <Outlet></Outlet>
+                <ExtraNewCard></ExtraNewCard>
                 <Footer></Footer>
             </main>
         </div>

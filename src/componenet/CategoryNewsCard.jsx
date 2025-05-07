@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import Navbar from './Navbar';
 
 const CategoryNewsCard = ({ category }) => {
     const [setEmail] = useState('');
@@ -12,10 +13,12 @@ const CategoryNewsCard = ({ category }) => {
         //  console.log('click')
     }
     return (
-        <div className='h-[350px] px-80'>
-            <div className="card lg:card-side bg-base-100 w-full mx-auto shadow-lg shadow-fuchsia-500/80 mt-8 mb-8">
-                <figure className="h-[500px]">
-                    <img src={category.thumbnail} alt={category.name} className="w-full  rounded-xl" />
+        
+        <div className='max-w-11/12 mx-auto h-[350px] px-80'>
+            <Navbar></Navbar>
+            <div className="card lg:card-side bg-base-100 w-full mx-auto shadow-lg shadow-fuchsia-500/80 mt-8 p-5 mb-8">
+                <figure>
+                    <img src={category.thumbnail} alt={category.name} className="w-full h-fit rounded-xl" />
                 </figure>
                 <div className="card-body">
                     <div className='mt-2 text-sm'>

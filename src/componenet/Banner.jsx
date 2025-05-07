@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from "react-slick";
-import Navbar from './Navbar';
 const Banner = () => {
     const settings = {
         dots: true,
