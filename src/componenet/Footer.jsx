@@ -2,40 +2,45 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-gray-200 text-black py-10 px-6">
-            <div className="max-w-7xl mx-auto text-center grid md:grid-cols-3 gap-8">
+        <footer className="w-full bg-gray-100 text-gray-800 py-10 px-4">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
                 {/* Company Info */}
                 <div>
-                    <h2 className="text-2xl font-bold mb-2">Event Planing</h2>
-                    <p className="text-sm">
-                        Empowering you with legal solutions.<br /> Book trusted lawyers anytime.
+                    <h2 className="text-2xl font-bold mb-3 text-secondary">Event Planning</h2>
+                    <p className="text-sm leading-relaxed">
+                        Empowering you with legal solutions. <br />
+                        Book trusted lawyers anytime, anywhere.
                     </p>
                 </div>
 
-                {/* Links */}
+                {/* Useful Links */}
                 <div>
-                    <h3 className="text-xl font-semibold mb-2">Useful Links</h3>
-                    <ul className="space-y-1 text-sm">
-                        <li><a className="hover:text-secondary">Terms & Conditions</a></li>
-                        <li><a className="hover:text-secondary">Privacy Policy</a></li>
-                        <li><a className="hover:text-secondary">Contact Us</a></li>
+                    <h3 className="text-xl font-semibold mb-3">Useful Links</h3>
+                    <ul className="space-y-2 text-sm">
+                        <li><a href="#" className="hover:text-secondary transition duration-200">Terms & Conditions</a></li>
+                        <li><a href="#" className="hover:text-secondary transition duration-200">Privacy Policy</a></li>
+                        <li><a href="#" className="hover:text-secondary transition duration-200">Contact Us</a></li>
                     </ul>
                 </div>
 
                 {/* Social Media */}
-                <div>
-                    <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
+                <div className="flex flex-col items-center md:items-start">
+                    <h3 className="text-xl font-semibold mb-3">Follow Us</h3>
                     <div className="flex space-x-4">
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-secondary">
+                        <a href="https://facebook.com" target="_blank" rel="noreferrer"
+                            className="hover:text-secondary transition duration-200">
                             <FaFacebookF size={20} />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-secondary">
+                        <a href="https://twitter.com" target="_blank" rel="noreferrer"
+                            className="hover:text-secondary transition duration-200">
                             <FaTwitter size={20} />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-secondary">
+                        <a href="https://linkedin.com" target="_blank" rel="noreferrer"
+                            className="hover:text-secondary transition duration-200">
                             <FaLinkedinIn size={20} />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-secondary">
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer"
+                            className="hover:text-secondary transition duration-200">
                             <FaInstagram size={20} />
                         </a>
                     </div>
@@ -43,7 +48,7 @@ const Footer = () => {
             </div>
 
             {/* Bottom Text */}
-            <div className="text-center text-sm mt-8 border-t border-gray-700 pt-4">
+            <div className="text-center text-xs text-gray-600 mt-10 border-t border-gray-300 pt-4">
                 &copy; {new Date().getFullYear()} Event Planning. All rights reserved.
             </div>
         </footer>

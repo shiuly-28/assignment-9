@@ -12,58 +12,67 @@ const MyProfile = () => {
     const handleUpdateProfile = (e) => {
         e.preventDefault();
         const form = e.target;
-        const displayName = form.name.value;
-        const photoURL = form.photo.value;
+        const displayName = form.name.value.trim();
+        const photoURL = form.photo.value.trim();
+
+        if (!displayName || !photoURL) {
+            toast.warn("Please fill in both fields");
+            return;
+        }
+
         const userInfo = { displayName, photoURL };
         updateUser(userInfo)
             .then(() => {
-                toast.success("Profile updated");
-            }).catch((error) => {
-                toast.error(error.message);
+                toast.success("Profile updated successfully!");
+            })
+            .catch((error) => {
+                toast.error(`Update failed: ${error.message}`);
             });
     };
 
     return (
-        <div>
+        <>
             <Navbar />
             <Helmet>
-                <title>Company || MyProfile</title>
+                <title>Event Planning | My Profile</title>
             </Helmet>
 
-            <div className="max-w-5xl w-full px-4 sm:px-6 md:px-10 lg:px-20 py-10 bg-base-200 mx-auto my-20 rounded-xl">
+            <main className="max-w-5xl w-full px-4 sm:px-6 md:px-10 lg:px-20 py-10 mx-auto my-20 bg-gray-100 rounded-xl">
                 {
                     user ? (
-                        <div className="bg-base-100 rounded-2xl shadow-2xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                            {/* Profile Photo + Info */}
-                            <div className="flex flex-col items-center text-center space-y-4">
+                        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                            {/* Profile Info */}
+                            <div className="flex flex-col items-center text-center gap-3">
                                 <img
-                                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover shadow"
-                                    src={user.photoURL}
-                                    alt={user.displayName}
+                                    className="w-28 h-28 rounded-full object-cover shadow-md border"
+                                    src={user.photoURL || "https://i.ibb.co/yYPdK9p/avatar.png"}
+                                    alt={user.displayName || "User Avatar"}
                                 />
-                                <h2 className="text-lg sm:text-xl font-semibold">{user.displayName}</h2>
+                                <h2 className="text-xl font-bold">{user.displayName || "No Name"}</h2>
                                 <p className="text-sm text-gray-600 break-words">{user.email}</p>
                             </div>
 
-                            {/* Form */}
+                            {/* Update Form */}
                             <div className="w-full">
-                                <h3 className="btn btn-outline btn-secondary text-base sm:text-lg font-semibold mb-4">
-                                    Update Profile
+                                <h3 className="text-lg font-semibold text-secondary mb-5">
+                                    Update Your Profile
                                 </h3>
                                 <form onSubmit={handleUpdateProfile} className="space-y-4">
                                     <div>
-                                        <label className="block mb-1 font-medium">Name</label>
+                                        <label htmlFor="name" className="block mb-1 font-medium">Full Name</label>
                                         <input
+                                            id="name"
                                             type="text"
                                             name="name"
                                             defaultValue={user.displayName}
                                             className="input input-bordered w-full"
-                                            placeholder="Enter your name"
+                                            placeholder="Enter your full name"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block mb-1 font-medium">Photo URL</label>
+                                        <label htmlFor="photo" className="block mb-1 font-medium">Photo URL</label>
                                         <input
+                                            id="photo"
                                             type="text"
                                             name="photo"
                                             defaultValue={user.photoURL}
@@ -73,8 +82,8 @@ const MyProfile = () => {
                                     </div>
                                     <input
                                         type="submit"
-                                        value="Update Profile"
-                                        className="btn text-black btn-outline btn-secondary w-full"
+                                        value="Save Changes"
+                                        className="btn btn-secondary w-full"
                                     />
                                 </form>
                             </div>
@@ -83,9 +92,9 @@ const MyProfile = () => {
                         <Loading />
                     )
                 }
-            </div>
+            </main>
             <Footer />
-        </div>
+        </>
     );
 };
 

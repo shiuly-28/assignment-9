@@ -4,56 +4,83 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 const CategoryNewsCard = ({ category }) => {
-    const [, setEmail] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        email: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!formData.name || !formData.email) {
+            toast.error("Please fill in all fields.");
+            return;
+        }
         toast.success("✅ Seat reserved successfully!");
-        setEmail('');
+        setFormData({ name: '', email: '' });
     };
 
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar />
             <div className='w-full px-4 sm:px-8 lg:px-20 mx-auto py-10'>
 
-                <div className="card lg:card-side bg-base-100 w-full shadow-lg shadow-fuchsia-500/80 mt-8 p-5">
-                    <figure className="w-full lg:w-1/2">
-                        <img src={category.thumbnail} alt={category.name} className="w-full h-auto object-cover rounded-xl" />
-                    </figure>
+                <div className="flex flex-col lg:flex-row gap-6 bg-base-100 shadow-lg shadow-fuchsia-500/30 rounded-xl p-6">
+                    {/* Image Section */}
+                    <div className="w-full lg:w-1/2">
+                        <img
+                            src={category.thumbnail}
+                            alt={category.name || "Event Image"}
+                            className="w-full h-full object-cover rounded-xl"
+                        />
+                    </div>
 
-                    <div className="card-body w-full lg:w-1/2">
-                        <div className="badge badge-secondary mb-2">{category.category}</div>
-                        <h2 className="card-title text-xl font-bold">{category.name}</h2>
-                        <p className="text-sm text-gray-600">{category.description}</p>
+                    {/* Content Section */}
+                    <div className="w-full lg:w-1/2 flex flex-col justify-between">
+                        <div>
+                            <span className="badge badge-secondary mb-3">{category.category}</span>
+                            <h2 className="text-2xl font-bold mb-2">{category.name}</h2>
+                            <p className="text-sm text-gray-600 mb-4">{category.description}</p>
 
-                        <div className="mt-2 text-sm space-y-1">
-                            <p><span className="font-medium">📅 Date:</span> {category.date}</p>
-                            <p><span className="font-medium">📍 Location:</span> {category.location}</p>
-                            <p><span className="font-medium">💳 Entry Fee:</span> {category.entry_fee}</p>
+                            <div className="text-sm space-y-1 mb-4">
+                                <p><strong>📅 Date:</strong> {category.date}</p>
+                                <p><strong>📍 Location:</strong> {category.location}</p>
+                                <p><strong>💳 Entry Fee:</strong> {category.entry_fee}</p>
+                            </div>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+                        {/* Form */}
+                        <form onSubmit={handleSubmit} className="space-y-3 mt-4">
                             <input
                                 name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 className="input input-bordered w-full"
                                 type="text"
                                 placeholder="Your Name"
+                                required
                             />
                             <input
                                 name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 className="input input-bordered w-full"
                                 type="email"
                                 placeholder="Your Email"
+                                required
                             />
-                            <div className="card-actions">
-                                <button type="submit" className="btn btn-outline btn-secondary w-full">Reserve Seat</button>
-                            </div>
+                            <button type="submit" className="btn btn-outline btn-secondary w-full">
+                                Reserve Seat
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+            <Footer />
         </div>
     );
 };

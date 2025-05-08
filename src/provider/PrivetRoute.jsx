@@ -5,7 +5,7 @@ import Loading from '../layouts/pages/Loading';
 
 const PrivetRoute = ({ children }) => {
     const { user, loading } = use(AuthContext)
-    console.log(user)
+    // console.log(user)
 
     if (loading) {
         return <Loading></Loading>

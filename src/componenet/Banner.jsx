@@ -16,31 +16,31 @@ const Banner = () => {
 
     const slides = [
         {
-            image: "https://i.ibb.co.com/ymQgnbcX/How-to-Start-Event-Management-Business-in-Bangladesh.jpg",
+            image: "https://i.ibb.co/ymQgnbcX/How-to-Start-Event-Management-Business-in-Bangladesh.jpg",
         },
         {
-            image: "https://i.ibb.co.com/4ZprDPrZ/Seminars-1.jpg",
+            image: "https://i.ibb.co/4ZprDPrZ/Seminars-1.jpg",
             heading: "Start Learning This Week – Join the Free Workshop!",
             subText: "When the city lights dim and the stars begin to shine, something magical is about to begin. This isn't just another evening—this is the event everyone's been waiting for."
         },
         {
-            image: "https://i.ibb.co.com/6zHdzWH/banner3.jpg",
+            image: "https://i.ibb.co/6zHdzWH/banner3.jpg",
             heading: "Learn from the Experts – Registration Now Open",
             subText: "When the city lights dim and the stars begin to shine, something magical is about to begin. This isn't just another evening—this is the event everyone's been waiting for."
         }
     ];
 
     return (
-        <div className="relative w-11/12 mx-auto py-6">
+        <div className="relative w-full mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <Slider {...settings}>
                 {slides.map((slide, index) => (
                     <div key={index}>
                         <div
-                            className="w-full h-[60vh] bg-cover bg-center bg-no-repeat flex items-center justify-center"
+                            className="w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] bg-cover bg-center bg-no-repeat flex items-center justify-center"
                             style={{ backgroundImage: `url('${slide.image}')` }}
                         >
                             {(slide.heading || slide.subText) && (
-                                <div className="p-4 rounded-lg text-center max-w-xl mx-auto">
+                                <div className="p-4 sm:p-6 rounded-lg text-center max-w-xl mx-auto bg-opacity-70 bg-white">
                                     <h3 className="text-xl md:text-3xl font-bold text-black">{slide.heading}</h3>
                                     <p className="text-sm md:text-base text-black mt-2">{slide.subText}</p>
                                 </div>
@@ -54,4 +54,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
