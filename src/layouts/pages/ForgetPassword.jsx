@@ -21,12 +21,12 @@ const ForgetPassword = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='flex justify-center min-h-screen items-center p-8'>
-                <div className="card bg-base-100 w-full max-w-sm border shadow-2xl py-5 p-8">
+            <div className='flex justify-center items-center w-11/12 mx-auto py-30 h-fit'>
+                <div className="card bg-base-100 w-full max-w-sm border shadow-2xl p-8">
 
                     <h2 className='text-2xl font-bold text-center'>Forget Password</h2>
                     <label className="label">Email</label>
-                    <input name='email' type="email" ref={emailRef} className="input input-bordered mb-4" placeholder="Email" required />
+                    <input name='email' type="email" ref={emailRef} className="input input-bordered mb-4" placeholder="Your Email" required />
                     <button onClick={handleResetPassword} className='btn btn-outline btn-secondary' type="submit">Reset password</button>
                 </div>
             </div>

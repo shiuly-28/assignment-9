@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { createUser, setUser, googleSignIn } = useContext(AuthContext);
+    const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState();
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -14,17 +16,29 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        const uppercase = /[A-Z]/.test(password);
+        const lowercase = /[a-z]/.test(password);
+        const lengthValid = password.length >= 6;
+
+        if (!uppercase || !lowercase || !lengthValid) {
+            toast.error("Password must contain at least one uppercase, one lowercase and 6 characters minimum");
+            return;
+        }
 
         createUser(email, password)
             .then(result => {
-                const user = result.user;
-                user.displayName = name;
-                user.photoURL = photo;
-                setUser(user);
-                alert('Registration successful');
+                updateUser({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        toast.success(result, "Registration successful!");
+                        navigate("/");
+                    })
+                    .catch((error) => {
+                        toast.error(error.message);
+                    })
             })
             .catch(error => {
                 alert(error.code);
+
             });
     };
     const handleRegisterPassword = () => {
@@ -48,21 +62,23 @@ const Register = () => {
                         <input name='photo' type="text" className="input input-bordered" placeholder="Photo URL" required />
                         {/* email */}
 
-                            <label className="label">Email</label>
-                            <input name='email' type="email" className="input input-bordered" placeholder="Email" required />
-                            
+                        <label className="label">Email</label>
+                        <input name='email' type="email" className="input input-bordered" placeholder="Email" required />
+
                         {/* password */}
                         <div className='relative'>
                             <label className="label">Password</label>
                             <input name='password' type={showPassword ? 'text' : 'password'}
-                                className="input input-bordered" placeholder="Password"/>
+                                className="input input-bordered" placeholder="Password" />
+
                             <button onClick={() => { setShowPassword(!showPassword) }} className='btn btn-xs absolute top-7 right-6'>
-                                
+
                                 {
                                     showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />
                                 }
                             </button>
-                       </div>
+                            <p className='text-red-500'>Password must have one lowercase, one uppercase, one digit and 6 chearacters or longer.</p>
+                        </div>
 
                         <button type='submit' className="btn btn-neutral mt-4 w-full">Register</button>
                         <p className='text-center mt-5'>OR</p>

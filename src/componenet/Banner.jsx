@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
+
 const Banner = () => {
     const settings = {
         dots: true,
@@ -12,71 +13,45 @@ const Banner = () => {
         autoplaySpeed: 5000,
         fade: true,
     };
-    return (
-        <div className='relative w-11/12 mx-auto py-6' >
-           
-            <Slider {...settings}>
-                
-                <div>
-                    <div
-                        style={{
-                            backgroundImage:
-                                "url('https://i.ibb.co.com/ymQgnbcX/How-to-Start-Event-Management-Business-in-Bangladesh.jpg')",
-                            width: "100%",
-                            hight: "50%",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                            height: "60vh", // optional, to make it fill screen
-                        }}
-                    >
-                </div>
-                </div>
-                <div>
-                    <div
-                        style={{
-                            backgroundImage:
-                                "url('https://i.ibb.co.com/4ZprDPrZ/Seminars-1.jpg')",
-                            width: "100%",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                            height: "60vh",
-                        }}
-                    >
-                        <div className="flex flex-col justify-center items-center h-full">
-                            <h3 className="text-black text-3xl font-bold">"Start Learning This Week – Join the Free Workshop!"</h3>
-                            <p className='text-black'>When the city lights dim and the stars begin to shine, something magical is about to <br />
-                                This isn't just another evening—this is the event everyone's been waiting for.</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div>
-                    <div
-                        style={{
-                            backgroundImage:
-                                "url('https://i.ibb.co.com/6zHdzWH/banner3.jpg')",
-                            width: "100%",
-                            hight:"50%",
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                            height: "60vh", // optional, to make it fill screen
-                        }}
-                    >
-                        <div className="flex flex-col text-center justify-center items-center h-full">
-                            <h3 className="text-black font-bold text-3xl">"Learn from the Experts – Registration Now Open"</h3>
-                            <p className='text-black'>When the city lights dim and the stars begin to shine, something magical is about to <br />
-                                This isn't just another evening—this is the event everyone's been waiting for.</p>
-                        </div>
-                      
-                    </div>
-                </div>
-              
 
+    const slides = [
+        {
+            image: "https://i.ibb.co.com/ymQgnbcX/How-to-Start-Event-Management-Business-in-Bangladesh.jpg",
+            heading: "",
+            subText: ""
+        },
+        {
+            image: "https://i.ibb.co.com/4ZprDPrZ/Seminars-1.jpg",
+            heading: "Start Learning This Week – Join the Free Workshop!",
+            subText: "When the city lights dim and the stars begin to shine, something magical is about to begin. This isn't just another evening—this is the event everyone's been waiting for."
+        },
+        {
+            image: "https://i.ibb.co.com/6zHdzWH/banner3.jpg",
+            heading: "Learn from the Experts – Registration Now Open",
+            subText: "When the city lights dim and the stars begin to shine, something magical is about to begin. This isn't just another evening—this is the event everyone's been waiting for."
+        }
+    ];
+
+    return (
+        <div className="relative w-11/12 mx-auto py-6">
+            <Slider {...settings}>
+                {slides.map((slide, index) => (
+                    <div key={index}>
+                        <div
+                            className="w-full h-[60vh] bg-cover bg-center bg-no-repeat flex items-center justify-center"
+                            style={{ backgroundImage: `url('${slide.image}')` }}
+                        >
+                            {(slide.heading || slide.subText) && (
+                                <div className="bg-white/70 p-4 rounded-lg text-center max-w-xl mx-auto">
+                                    <h3 className="text-xl md:text-3xl font-bold text-black">{slide.heading}</h3>
+                                    <p className="text-sm md:text-base text-black mt-2">{slide.subText}</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
             </Slider>
-      </div>
+        </div>
     );
 };
 

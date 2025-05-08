@@ -8,12 +8,18 @@ import ExtraNewCard from './pages/ExtraNewCard';
 const HomeLayOut = () => {
     return (
         <div>
-            <main>
-                 <Navbar></Navbar>
-                
-                <Outlet></Outlet>
-                <Footer></Footer>
+            <header>
+                <Navbar></Navbar>
+            </header>
+            <main >
+                  <section className='w-11/12 mx-auto min-h-screen'>
+                    <Outlet></Outlet>
+                </section>
             </main>
+            <footer className=''>
+                <Footer></Footer>
+            </footer>
+            
         </div>
     );
 };

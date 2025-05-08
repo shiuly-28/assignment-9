@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
-    
+    const [showPassword, setShowPassword] = useState();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -41,8 +42,17 @@ const Login = () => {
                             <label className="label">Email</label>
                             <input name='email' type="email" className="input input-bordered mb-4" placeholder="Email" required />
                             {/* password */}
-                            <label className="label">Password</label>
-                            <input name='password' type="password" className="input input-bordered mb-4" placeholder="Password " required />
+                            <div className='relative'>
+                                <label className="label">Password</label>
+                                <input name='password' type={showPassword ? 'text' : 'password'}
+                                    className="input input-bordered" placeholder="Password" />
+                                <button onClick={() => { setShowPassword(!showPassword) }} className='btn btn-xs absolute top-7 right-6'>
+
+                                    {
+                                        showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />
+                                    }
+                                </button>
+                            </div>
                             {/* forget password */}
                             <div className='justify-between'>
                                 <Link to="/forgatePassword" className="link link-hover mb-4">Forgot password?</Link>

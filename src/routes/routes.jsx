@@ -22,6 +22,10 @@ const router = createBrowserRouter([
                 loader:()=>fetch("/event.json"),
                 element: <Home></Home>,
             },
+            {
+                path: "/ExtraNewsCard",
+                element: <ExtraNewCard></ExtraNewCard>
+            }
           
         ]
     },
@@ -58,9 +62,6 @@ const router = createBrowserRouter([
         path: "/forgatePassword",
         element:<ForgetPassword></ForgetPassword>
     },
-    {
-        path: "/ExtraNewsCard",
-        element: <ExtraNewCard></ExtraNewCard>
-    }
+    
 ]);
 export default router;
