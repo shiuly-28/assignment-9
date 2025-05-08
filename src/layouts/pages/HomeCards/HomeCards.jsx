@@ -9,7 +9,7 @@ const HomeCards = ({ data }) => {
                     Upcoming Events
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
                     {
                         data.map((singleCard) => (
                             <HomeCard key={singleCard.id} singleCard={singleCard} />

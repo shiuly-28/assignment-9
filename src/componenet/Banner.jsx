@@ -36,11 +36,11 @@ const Banner = () => {
                 {slides.map((slide, index) => (
                     <div key={index}>
                         <div
-                            className="w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] bg-cover bg-center bg-no-repeat flex items-center justify-center"
+                            className="w-full sm:h-[70vh] lg:h-[80vh] bg-cover bg-center bg-no-repeat flex items-center justify-center"
                             style={{ backgroundImage: `url('${slide.image}')` }}
                         >
                             {(slide.heading || slide.subText) && (
-                                <div className="p-4 sm:p-6 rounded-lg text-center max-w-xl mx-auto bg-opacity-70 bg-white">
+                                <div className="p-4 sm:p-6 rounded-lg text-center max-w-xl mx-auto bg-opacity-70 ">
                                     <h3 className="text-xl md:text-3xl font-bold text-black">{slide.heading}</h3>
                                     <p className="text-sm md:text-base text-black mt-2">{slide.subText}</p>
                                 </div>
