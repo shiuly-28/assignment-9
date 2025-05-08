@@ -3,8 +3,7 @@ import { useLoaderData } from 'react-router';
 import Banner from '../../componenet/Banner';
 import HomeCards from './HomeCards/HomeCards';
 import { Helmet } from 'react-helmet-async';
-import AutoRemoveCarousel from '../../componenet/Banner2';
-import SimpleSlider from '../../componenet/Banner2';
+
 
 
 const Home = () => {

@@ -13,6 +13,7 @@ const HomeLayOut = () => {
             <header>
                 <Navbar></Navbar>
             </header>
+            {import.meta.env.Vite_name}
             <main >
                 <section className='w-11/12 mx-auto min-h-screen'>
                     {

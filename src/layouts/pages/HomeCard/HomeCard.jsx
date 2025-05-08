@@ -15,7 +15,7 @@ const HomeCard = ({ singleCard }) => {
 
     return (
         <div className="w-full px-4 mb-20">
-            <div className="card bg-base-100 shadow-xl mt-8 border border-red-500 h-full mb-8 flex flex-col lg:flex-row p-4 gap-4">
+            <div className="card bg-base-100 shadow-xl mt-8  h-full mb-8 flex flex-col lg:flex-row p-4 gap-4">
                 <figure className="lg:w-1/3">
                     <img src={thumbnail} alt={name} className="w-full h-52 object-cover rounded-xl" />
                 </figure>
