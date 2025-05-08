@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-import { Helmet } from 'react-helmet-async';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Navbar from '../../componenet/Navbar';
+import Footer from '../../componenet/Footer';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -19,9 +21,10 @@ const Login = () => {
             .then(result => {
                 console.log('Logged in:', result.user);
                 navigate('/');
+                toast.success(result, "Login successful!");
             })
             .catch(error => {
-                alert(error.code);
+                 toast.error(error.message);
             });
     };
 
@@ -33,6 +36,7 @@ const Login = () => {
     }
     return (
         <div>
+            <Navbar></Navbar>
             <div className='flex justify-center min-h-screen items-center'>
                 <div className="card bg-base-100 w-full max-w-sm shadow-2xl py-5">
                     <h2 className='text-2xl font-bold text-center'>Login Your Account</h2>
@@ -73,6 +77,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

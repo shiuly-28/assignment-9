@@ -17,8 +17,6 @@ const Banner = () => {
     const slides = [
         {
             image: "https://i.ibb.co.com/ymQgnbcX/How-to-Start-Event-Management-Business-in-Bangladesh.jpg",
-            heading: "",
-            subText: ""
         },
         {
             image: "https://i.ibb.co.com/4ZprDPrZ/Seminars-1.jpg",
@@ -42,7 +40,7 @@ const Banner = () => {
                             style={{ backgroundImage: `url('${slide.image}')` }}
                         >
                             {(slide.heading || slide.subText) && (
-                                <div className="bg-white/70 p-4 rounded-lg text-center max-w-xl mx-auto">
+                                <div className="p-4 rounded-lg text-center max-w-xl mx-auto">
                                     <h3 className="text-xl md:text-3xl font-bold text-black">{slide.heading}</h3>
                                     <p className="text-sm md:text-base text-black mt-2">{slide.subText}</p>
                                 </div>
@@ -56,3 +54,4 @@ const Banner = () => {
 };
 
 export default Banner;
+

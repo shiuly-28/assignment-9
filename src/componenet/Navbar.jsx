@@ -78,9 +78,11 @@ const Navbar = () => {
                                         className="w-10 h-10 rounded-full border"
                                     />
                                 </div>
+                                <Link to="/auth/login">
                                 <button onClick={handleLogOut} className="btn btn-outline btn-secondary text-black">
                                     Log out
-                                </button>
+                                    </button>
+                                </Link>
                             </>
                         ) : (
                             <Link to="/auth/login" className="btn btn-outline btn-secondary text-black">
